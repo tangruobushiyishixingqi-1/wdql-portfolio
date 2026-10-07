@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f0e8">
+  <title>《红楼梦》木石前盟模拟系统</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <a class="back-link" href="../../index.html#projects">← 返回项目页</a>
+      <p class="overline">LITERATURE · RELATIONSHIP SIMULATION</p>
+      <h1>《红楼梦》木石前盟模拟系统</h1>
+      <p class="subtitle">事件顺序影响关系演变，不同顺序会导致不同结果</p>
+    </header>
+
+    <section class="workspace" aria-label="模拟工作区">
+      <aside class="panel events-panel">
+        <div class="panel-title"><span>01</span><h2>选择剧情事件</h2></div>
+        <p class="hint">事件影响取决于当前关系状态。点击事件，观察宝黛关系的变化。</p>
+        <div id="events" class="event-list"></div>
+        <div class="controls">
+          <button id="optimize" class="warm-button">✦ 自动寻找最优顺序</button>
+          <button id="reset" class="soft-button">↻ 重置模拟</button>
+        </div>
+        <div class="options">
+          <label><input id="show-viz" type="checkbox" checked> 显示关系图</label>
+          <label><input id="show-param" type="checkbox" checked> 显示参数影响图</label>
+        </div>
+      </aside>
+
+      <section class="center-column">
+        <section class="dashboard">
+          <div class="panel-title"><span>02</span><h2>💕 宝黛关系仪表盘</h2></div>
+          <div class="values">
+            <div><small>初始关系值</small><b id="initial-value">0.600</b></div>
+            <div class="current-value"><small>当前关系值</small><strong id="current-value">0.600</strong><span id="change-label">→ 等待选择事件</span></div>
+          </div>
+          <div class="meter"><i id="meter-fill"></i><span id="meter-label">+0.60</span></div>
+          <div class="step-note">关系范围 −1（对立）至 +1（亲密） · 模型包含邻居效应与随机情绪波动</div>
+        </section>
+
+        <section class="panel visualization-panel">
+          <div class="panel-title"><span>03</span><h2>人物关系网络</h2></div>
+          <svg id="network" viewBox="0 0 620 350" role="img" aria-label="人物关系网络图"></svg>
+          <div class="legend"><span><i class="legend-baoyu"></i>宝玉</span><span><i class="legend-daiyu"></i>黛玉</span><span><i class="legend-other"></i>其他人物</span><span><i class="line-positive"></i>亲密</span><span><i class="line-negative"></i>对立</span></div>
+        </section>
+
+        <section id="parameter-panel" class="panel parameter-panel">
+          <div class="panel-title"><span>04</span><h2>参数对关系值的影响</h2></div>
+          <div id="parameter-charts" class="parameter-charts"></div>
+        </section>
+
+        <section class="panel log-panel">
+          <div class="panel-title"><span>05</span><h2>模拟日志</h2><button id="clear-log" class="text-button">清空</button></div>
+          <pre id="log" aria-live="polite"></pre>
+        </section>
+      </section>
+
+      <aside class="right-column">
+        <section class="panel event-detail">
+          <div class="panel-title"><span>06</span><h2>当前事件</h2></div>
+          <div id="event-info" class="event-info"><h3>请选择事件</h3><p>从左侧选择一个剧情事件，查看它对宝黛关系的实际影响。</p></div>
+        </section>
+        <section class="panel excerpt-panel">
+          <div class="panel-title"><span>07</span><h2>📖 原著节选</h2></div>
+          <article id="excerpt"><h3>原著节选</h3><p>请从左侧选择一个事件，此处将显示该事件在《红楼梦》原著中的经典片段。</p><p>通过阅读原著，理解事件对宝黛关系的影响，感受曹雪芹笔下的细腻情感。</p></article>
+        </section>
+        <section id="optimizer-result" class="panel optimizer-result" hidden></section>
+      </aside>
+    </section>
+    <footer><span id="status">就绪 · 请选择事件开始模拟</span><span>浏览器网页模拟 · 关系变化含随机因素</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
