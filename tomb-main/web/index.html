@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f2">
+  <title>印章处理器</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a href="../../index.html#projects" class="back-link">← 返回项目页</a>
+      <span class="eyebrow">IMAGE TO STAMP · WEB EDITION</span>
+    </header>
+
+    <section class="intro">
+      <p class="section-index">SMART STAMP PROCESSOR</p>
+      <h1>印章处理器</h1>
+      <p>上传一张照片，提取线稿、编辑点阵，再发送到印章设备。</p>
+    </section>
+
+    <nav class="tabs" aria-label="功能选择">
+      <button class="tab active" data-view="photo">自定义印章</button>
+      <button class="tab" data-view="draw">手绘马赛克</button>
+    </nav>
+
+    <section id="photo-view" class="view active">
+      <div class="instructions">
+        <strong>使用说明</strong>
+        <ol>
+          <li>选择或拍摄一张照片，网页会裁剪为正方形。</li>
+          <li>调整提取模式、线宽和输出尺寸。</li>
+          <li>生成后可点击预览格子编辑，再下载或打印。</li>
+        </ol>
+      </div>
+
+      <div class="panel">
+        <div class="panel-heading"><span>01</span><h2>选择图片</h2></div>
+        <label class="upload-box" for="image-input">
+          <span class="upload-mark">＋</span>
+          <span id="upload-label">选择或拍摄彩色照片</span>
+          <small>PNG / JPG / WEBP</small>
+        </label>
+        <input id="image-input" type="file" accept="image/*" capture="environment" hidden>
+        <div id="source-preview-wrap" class="source-preview-wrap" hidden>
+          <img id="source-preview" alt="已选择的照片">
+          <p>处理时将居中裁剪为正方形</p>
+        </div>
+      </div>
+
+      <div class="panel parameters">
+        <div class="panel-heading"><span>02</span><h2>参数设置</h2></div>
+        <div class="field">
+          <span class="field-label">提取模式</span>
+          <div class="segmented">
+            <button class="mode active" data-mode="default">标准提取</button>
+            <button class="mode" data-mode="improved">增强平滑</button>
+          </div>
+          <small>增强模式会减少棋盘伪影，让线条更平滑。</small>
+        </div>
+        <div class="field">
+          <label for="thickness">线宽倍率 <output id="thickness-out">1.0</output></label>
+          <input id="thickness" type="range" min="0" max="10" step="0.1" value="1">
+          <small>范围 0–10；推荐倍率 <b id="recommended">6.67</b></small>
+        </div>
+        <div class="field checkbox-field">
+          <label><input id="resize-toggle" type="checkbox" checked> 压缩到指定像素尺寸</label>
+          <small>打印机支持 32 × 32 像素点。</small>
+        </div>
+        <div class="dimension-fields">
+          <label>输出宽度 (px)<input id="width" type="number" min="8" max="512" value="32"></label>
+          <label>输出高度 (px)<input id="height" type="number" min="8" max="512" value="32"></label>
+        </div>
+        <button id="generate" class="primary" disabled>生成图片</button>
+        <p id="status" class="status" aria-live="polite">先选择一张图片。</p>
+      </div>
+    </section>
+
+    <section id="draw-view" class="view">
+      <div class="panel">
+        <div class="panel-heading"><span>01</span><h2>手绘马赛克</h2></div>
+        <p class="muted">点击或拖动格子，在黑白之间切换。打印机使用 32 × 32 点阵。</p>
+        <div class="dimension-fields draw-dimensions">
+          <label>宽度<input id="draw-width" type="number" min="8" max="128" value="32"></label>
+          <label>高度<input id="draw-height" type="number" min="8" max="128" value="32"></label>
+          <button id="reset-grid" class="secondary">清空画布</button>
+        </div>
+        <div class="grid-frame"><canvas id="grid" aria-label="可编辑的像素画布"></canvas></div>
+      </div>
+    </section>
+
+    <section id="result-panel" class="panel result-panel" hidden>
+      <div class="panel-heading"><span>03</span><h2 id="result-title">印章预览</h2></div>
+      <p class="muted">点击或拖动格子可翻转黑白。当前点阵：<b id="grid-size">32 × 32</b></p>
+      <div class="grid-frame"><canvas id="result-grid" aria-label="可编辑的印章点阵"></canvas></div>
+      <div class="button-row">
+        <button id="download" class="secondary">下载 PNG</button>
+        <button id="print" class="primary">发送到打印机</button>
+        <button id="reset" class="secondary">重新生成</button>
+      </div>
+    </section>
+
+    <section class="panel bluetooth-panel">
+      <div class="panel-heading"><span>04</span><h2>蓝牙打印</h2></div>
+      <p class="muted">连接“AI 自动印章”设备。需要支持 Web Bluetooth 的浏览器，并通过 HTTPS 或 localhost 打开。</p>
+      <div class="button-row">
+        <button id="connect" class="secondary">连接设备</button>
+        <button id="disconnect" class="secondary" disabled>断开连接</button>
+        <button id="gpio-high" class="secondary" disabled>GPIO 高电平</button>
+        <button id="gpio-low" class="secondary" disabled>GPIO 低电平</button>
+      </div>
+      <p id="ble-status" class="status" aria-live="polite">尚未连接设备。</p>
+      <progress id="progress" value="0" max="100" hidden></progress>
+      <details>
+        <summary>UUID 配置</summary>
+        <label>Service UUID<input id="service-uuid" value="4FAFC201-1FB5-459E-8FCC-C5C9C331914B"></label>
+        <label>特征值 UUID<input id="characteristic-uuid" value="BEB5483E-36E1-4688-B7F5-EA07361B26A8"></label>
+      </details>
+      <pre id="ble-log" class="ble-log" aria-live="polite"></pre>
+    </section>
+
+    <footer>图像处理服务地址沿用项目现有配置。社区分享功能尚未接入网页端。</footer>
+  </main>
+  <canvas id="work-canvas" hidden></canvas>
+  <script src="app.js"></script>
+</body>
+</html>
