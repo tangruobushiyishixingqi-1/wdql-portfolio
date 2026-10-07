@@ -1,0 +1,24 @@
+:root { color-scheme: dark; font-family: Consolas, "Courier New", monospace; background: #17191c; color: #d7d7d7; }
+* { box-sizing: border-box; }
+body { min-width: 320px; min-height: 100vh; margin: 0; padding: clamp(12px, 3vw, 34px); background: #17191c; }
+.terminal-page { width: min(100%, 1240px); margin: 0 auto; }
+.return-link { display: inline-block; margin-bottom: 11px; color: #aab5c0; font: 12px/1.5 Consolas, monospace; text-decoration: none; }
+.return-link:hover { color: #fff; text-decoration: underline; }
+.terminal-window { overflow: hidden; border: 1px solid #66717b; border-radius: 5px; background: #000; box-shadow: 0 18px 60px rgba(0,0,0,.42); }
+.terminal-title { display: flex; min-height: 31px; align-items: center; justify-content: space-between; padding: 0 11px; color: #f3f3f3; background: linear-gradient(#36424d, #25303a); font: 11px/1 Consolas, monospace; }
+.terminal-title span:last-child { color: #cbd2d8; letter-spacing: .25em; }
+.terminal-screen { min-height: min(72vh, 760px); max-height: 78vh; overflow: auto; padding: 17px 18px 20px; color: #d6d6d6; background: #050505; font: 14px/1.45 Consolas, "Microsoft YaHei", monospace; }
+.terminal-screen pre { min-width: max-content; margin: 0; color: inherit; font: inherit; white-space: pre; }
+.board-output { width: max-content; margin: 8px 0; color: #f9f1a5; }
+.terminal-board { margin: 0; font: inherit; line-height: 1.15; white-space: pre; }
+.terminal-input-row { display: flex; min-width: min(100%, 760px); align-items: baseline; gap: 8px; margin-top: 8px; color: #e6e6e6; }
+.terminal-input-row label { flex: 0 0 auto; color: #d7d7d7; }
+.terminal-input-row input { flex: 1 1 auto; min-width: 80px; padding: 0; border: 0; outline: 0; color: #f3f3f3; background: transparent; caret-color: #fff; font: inherit; }
+.terminal-screen:focus { outline: none; }
+.terminal-note { margin: 10px 1px 0; color: #8c969e; font: 11px/1.6 Consolas, "Microsoft YaHei", monospace; }
+[hidden] { display: none !important; }
+@media (max-width: 600px) {
+    body { padding: 9px; }
+    .terminal-screen { min-height: 70vh; padding: 13px 11px 17px; font-size: 12px; }
+    .terminal-title { font-size: 10px; }
+}
