@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050505">
+    <title>Mine Sweeper · Console</title>
+    <link rel="stylesheet" href="web.css">
+    <script src="web.js" defer></script>
+</head>
+<body>
+    <main class="terminal-page">
+        <a class="return-link" href="../../index.html#projects">← 返回项目页</a>
+        <section class="terminal-window" aria-label="扫雷程序终端模拟">
+            <div class="terminal-title"><span>Developer Command Prompt · 90-b2.exe</span><span>— □ ×</span></div>
+            <div class="terminal-screen" id="terminal-screen" tabindex="0">
+                <pre id="terminal-output" aria-live="polite"></pre>
+                <pre id="terminal-readout" class="terminal-readout" hidden></pre>
+                <div class="terminal-board-wrap" id="terminal-board-wrap" hidden>
+                    <div class="terminal-board" id="terminal-board" role="grid" aria-label="扫雷终端棋盘"></div>
+                </div>
+                <form class="terminal-input-row" id="terminal-form">
+                    <label id="terminal-prompt" for="terminal-input">&gt;</label>
+                    <input id="terminal-input" autocomplete="off" spellcheck="false" autofocus aria-label="终端输入">
+                </form>
+            </div>
+        </section>
+        <p class="terminal-note">网页终端模拟 · 输入菜单编号或使用鼠标点击棋盘</p>
+    </main>
+</body>
+</html>
