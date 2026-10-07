@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fbfaff">
+    <meta name="description" content="WDQL 的个人主页：在代码、文字与日常之间漫游。">
+    <title>WDQL — about me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="home" id="top" aria-labelledby="name">
+        <div class="sky">
+            <div class="cloud cloud--blue"></div>
+            <div class="cloud cloud--rose"></div>
+            <div class="cloud cloud--sage"></div>
+            <div class="starlight starlight--one"></div>
+            <div class="starlight starlight--two"></div>
+            <div class="stars">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <a class="feather-link feather-link--upper" href="#projects" aria-label="打开项目页">
+            <svg class="feather" viewBox="0 0 120 260" fill="none" aria-hidden="true">
+                <path d="M99 12C45 44 17 105 23 170c4 42 30 69 42 78 2-35 11-62 28-91 22-38 28-91 6-145Z" fill="currentColor" fill-opacity=".16"/>
+                <path d="M24 244c16-73 43-137 78-232M39 196l-24-32m37 1-31-35m45 1L42 91m57 6L72 67m34 1L83 38" stroke="currentColor" stroke-opacity=".36" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            <span class="feather-label">项目</span>
+            </a>
+            <a class="feather-link feather-link--lower" href="#interests" aria-label="打开爱好页">
+            <svg class="feather feather--lower" viewBox="0 0 120 260" fill="none" aria-hidden="true">
+                <path d="M99 12C45 44 17 105 23 170c4 42 30 69 42 78 2-35 11-62 28-91 22-38 28-91 6-145Z" fill="currentColor" fill-opacity=".16"/>
+                <path d="M24 244c16-73 43-137 78-232M39 196l-24-32m37 1-31-35m45 1L42 91m57 6L72 67m34 1L83 38" stroke="currentColor" stroke-opacity=".36" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            <span class="feather-label">爱好</span>
+            </a>
+        </div>
+
+        <header class="topline">
+            <p>PERSONAL JOURNAL <span>—</span> 2029 FALL</p>
+            <span class="topline-mark" aria-hidden="true">✳</span>
+        </header>
+
+        <section class="intro">
+            <p class="eyebrow"><span></span> something about me</p>
+            <h1 id="name">WDQL</h1>
+            <p class="school">同济大学 <b>·</b> 启迪书院 <b>·</b> 数据科学与大数据技术</p>
+
+            <div class="verse">
+                <span class="quote-mark" aria-hidden="true">“</span>
+                <p>我渴望有人暴烈地爱我至死不渝</p>
+            </div>
+
+            <div class="bio">
+                <p>向来恬然自若，<br>偶尔亦复自疑。</p>
+                <p>在每个深夜思考人生意义，<br>点完外卖方觉人间值得。</p>
+                <p>情绪上头，爆更万字小说，<br>灵光一现，代码敲出火花。</p>
+                <p>烧香沏茶、窗外远山含黛，<br>默默做一名无情键修。</p>
+            </div>
+        </section>
+
+        <footer class="bottomline">
+            <span class="location">在代码、文字与日常之间漫游</span>
+            <a class="scroll-cue" href="#projects" aria-label="继续向下浏览">
+                <span>SCROLL TO EXPLORE</span>
+                <i aria-hidden="true">↓</i>
+            </a>
+            <span class="page-number">01 <i></i> 03</span>
+        </footer>
+    </main>
+    <main class="details">
+        <section class="destination-page projects-page" id="projects" aria-labelledby="projects-title">
+            <header class="destination-heading">
+                <a class="back-home" href="#top">↑ <span>回到首页</span></a>
+                <h2 id="projects-title">项目</h2>
+                <p class="page-kicker">WHAT  I  MAKE</p>
+            </header>
+
+            <div class="project-list">
+                <article class="project-card">
+                    <p class="card-index">01 <span>DATA · AGENT</span></p>
+                    <div class="project-art flow-art" aria-label="采集、核验、入库流程预览"><span>采集</span><i></i><span>核验</span><i></i><span>入库</span></div>
+                    <h3>科研成果数据治理与智能核验 Agent</h3>
+                    <p class="project-tagline">让科研成果从“收集”走向“可信、可用”。</p>
+                    <p>独立开发了一套科研成果处理流程，将多来源数据采集、清洗去重、证据核验、语义分析和数据库入库串联起来。面对来源不一、字段缺失或记录冲突的成果，系统会先按规则筛查，再进行语义核验，并将需要判断的情况留给人工复核。</p>
+                    <p>在人工标注的数据集上，系统的自动核验覆盖率达到 87.5%。这个项目也让我更具体地理解了数据治理：自动化不只是提高处理效率，每条成果的来源、核验依据和待确认的问题也都应该清晰可查。</p>
+                    <p class="my-role"><b>我的工作</b>独立完成整体流程设计与开发，涉及数据采集、处理 Agent、核验逻辑、数据库写入与异常处理。</p>
+                </article>
+
+                <article class="project-card">
+                    <p class="card-index">02 <span>MINI PROGRAM · BLUETOOTH</span></p>
+                    <div class="project-art stamp-art" aria-label="印章点阵预览"><span>印</span><i>32 × 32</i></div>
+                    <h3>智能印章处理器</h3>
+                    <p class="project-tagline">从一张图片，到一枚可以带走的印章。</p>
+                    <p>这是一个连接图像处理与实体打印的微信小程序。用户上传图片后，程序将自动提取出黑白线稿，用户可以预览处理结果、手动调整细节，再通过蓝牙将图像发送到打印设备，完成从屏幕到纸面的输出。</p>
+                    <p>我负责小程序端的主要开发，并完成服务接入、蓝牙通信与分包传输等工作。调试过程中，我把上传、编辑、预览和打印串成一条完整流程，也处理了设备通信和页面状态之间的衔接。</p>
+                    <p class="my-role"><b>我的工作</b>小程序开发、Canvas 图像呈现与编辑、蓝牙打印调用、服务接入和部署调试。</p>
+                    <div class="project-web-links"><a href="tomb-main/web/index.html">打开网页模拟 <span>↗</span></a></div>
+                </article>
+
+                <article class="project-card">
+                    <p class="card-index">03 <span>RESEARCH · VIDEO UNDERSTANDING</span></p>
+                    <svg class="project-art scene-art" viewBox="0 0 120 64" role="img" aria-label="场景图关系预览"><path d="M20 18L61 32 96 16M20 18L31 50 61 32 91 49 96 16"/><circle cx="20" cy="18" r="7"/><circle cx="61" cy="32" r="8"/><circle cx="96" cy="16" r="7"/><circle cx="31" cy="50" r="6"/><circle cx="91" cy="49" r="6"/></svg>
+                    <h3>科研经历：场景图预测</h3>
+                    <p class="project-tagline">让模型记住关系如何变化，而不只看见某一刻。</p>
+                    <p>场景图预测关注的是：随着时间推进，画面中的物体及其关系会如何变化。围绕这个问题，我调研了相关论文、数据集与评价方式，并尝试从长时间序列中的关系变化出发，设计基于记忆的建模思路。</p>
+                    <p>为了检验自己的理解，我复现了 ECCV 2024 论文 SceneSayer 的完整流程，涵盖数据预处理、模型搭建、训练、推理与评估。这个过程让我从阅读方法描述，走到了逐步还原一套研究系统，也让我更具体地理解了时序建模中的难点。</p>
+                    <p class="my-role"><b>我的工作</b>文献与数据集调研、记忆机制思路设计、SceneSayer 流程复现。</p>
+                </article>
+
+                <article class="project-card">
+                    <p class="card-index">04 <span>C++ · GAMES</span></p>
+                    <div class="project-art hanoi-art" aria-label="汉诺塔动画预览"><i class="tower tower-a"><b></b><b></b><b></b></i><i class="tower tower-b"><b></b></i><i class="tower tower-c"></i></div>
+                    <h3>算法与游戏：汉诺塔 / 扫雷</h3>
+                    <p class="project-tagline">一个练习如何移动，一个练习如何判断。</p>
+                    <p>我用 C++ 实现了两个经典小游戏。汉诺塔提供递归与栈模拟等求解方式，也能通过动画观察圆盘移动，或亲自尝试完成挑战；扫雷则包含不同尺寸与难度的棋盘，支持翻格、标记和计时。</p>
+                    <p>一个把规则展开成清晰的步骤，一个把信息藏进每一次选择里。它们是我从算法练习走向完整交互程序的两次尝试。</p>
+                    <p class="my-role"><b>项目内容</b>汉诺塔多种求解与演示模式、图形化移动过程、手动操作；扫雷多种难度、鼠标操作、地雷标记、计时与棋盘状态管理。</p>
+                    <div class="project-web-links">
+                        <a href="hanoi/index.html">打开汉诺塔 <span>↗</span></a>
+                        <a href="扫雷/扫雷/index.html">打开扫雷 <span>↗</span></a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <p class="card-index">05 <span>LITERATURE · SIMULATION</span></p>
+                    <svg class="project-art dream-art" viewBox="0 0 120 64" role="img" aria-label="人物关系网络预览"><path d="M19 18L58 30 96 15M19 18L34 50 58 30 91 49 96 15M34 50L91 49"/><circle cx="19" cy="18" r="7"/><circle cx="58" cy="30" r="9"/><circle cx="96" cy="15" r="7"/><circle cx="34" cy="50" r="6"/><circle cx="91" cy="49" r="6"/></svg>
+                    <h3>《红楼梦》人物关系模拟</h3>
+                    <p class="project-tagline">如果故事的顺序发生变化，人物的关系将走向哪里？</p>
+                    <p>我做了一个围绕宝玉与黛玉关系变化的互动模拟程序。程序将小说中的十二个重要事件作为可调整的输入，通过细胞自动机模型模拟关系演变，并用粒子群优化寻找不同事件顺序下的结果。</p>
+                    <p>界面会展示关系变化过程，也能生成关系网络图。这个项目把文学阅读里的一个假设，变成了可以调整条件、观察变化的模型。</p>
+                    <div class="project-web-links"><a href="《红楼梦》人物关系模拟/web/index.html">打开网页模拟 <span>↗</span></a></div>
+                </article>
+            </div>
+            <a class="next-page-link" href="#interests">继续去爱好页 <span>↓</span></a>
+        </section>
+
+        <section class="destination-page interests-page" id="interests" aria-labelledby="interests-title">
+            <header class="destination-heading">
+                <a class="back-home" href="#top">↑ <span>回到首页</span></a>
+                <h2 id="interests-title">爱好</h2>
+                <p class="page-kicker"> WHAT I LOVE</p>
+            </header>
+
+            <div class="interest-list">
+                <article class="interest-card">
+                    <p class="interest-number">01 / READ</p>
+                    <h3>阅读 <span>“却顾所来径，苍苍横翠微。”</span></h3>
+                    <p>脚步无法到达的地方，书籍可以；岁月尚未揭晓的答案，阅读可以。</p>
+                    <p>儿时《青铜葵花》让我理解苦难中的温情与坚韧；后来《诗经》让我窥见古代礼俗与人情幽微。年岁渐长，才慢慢看清鲁迅笔下那个“吃人”的社会，理解先生以笔为剑的大义，也终于读懂“侠之大者，为国为民”。</p>
+                </article>
+
+                <article class="interest-card">
+                    <p class="interest-number">02 / WRITE</p>
+                    <h3>写作 <span>“文章千古事，得失寸心知。”</span></h3>
+                    <p>我写小说，也写随笔。</p>
+                    <p>小说里的角色替我去爱、去恨、去错过、去美满……他们情深不寿，他们恨海情天，他们小满胜万全。</p>
+                    <p>随笔里，我反复咀嚼心事，探索自己内心深处的声音，并不时回顾，去反思与总结。</p>
+                </article>
+
+                <article class="interest-card">
+                    <p class="interest-number">03 / WANDER</p>
+                    <h3>四处走走 <span>“人生到处知何似，应似飞鸿踏雪泥。”</span></h3>
+                    <p>喜欢在一座城市漫无目的地闲逛，不赶景点，也不急着抵达哪里。</p>
+                    <p>随机做上一班地铁，看来来往往的人群，随心选一站下车。沿着江边走上一段，在陌生街区转个弯，听微风拂过的声音。生命心安处常在，也偏爱计划之外的夕阳晚霞。</p>
+                </article>
+            </div>
+            <a class="next-page-link" href="#top">回到首页 <span>↑</span></a>
+        </section>
+    </main>
+    <script>
+        (() => {
+            const cards = document.querySelectorAll('.project-card');
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!('IntersectionObserver' in window) || reduceMotion) {
+                cards.forEach(card => card.classList.add('is-visible'));
+                return;
+            }
+            document.documentElement.classList.add('project-reveal-ready');
+            const observer = new IntersectionObserver((entries, currentObserver) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        currentObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+            cards.forEach(card => observer.observe(card));
+        })();
+    </script>
+</body>
+</html>
